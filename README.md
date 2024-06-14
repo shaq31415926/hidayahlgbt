@@ -4,7 +4,7 @@
 ```
 pip3 install streamlit
 ```
-- To run the app: streamlit run app.py
+- To run the app: 
 ```
 streamlit run app.py
 ```
