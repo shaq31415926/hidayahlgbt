@@ -1,7 +1,7 @@
 import streamlit as st
 
 # welcome message
-st.title("Hi, Welcome to Hadiyah(). We are a voluntary organisation XXXX")
+st.title("Hi, Welcome to [Hadiyah](https://hidayahlgbt.com/resource-list/). We are a voluntary organisation XXXX")
 
 with st.chat_message("user"):
     st.write("Hello 👋 Are you based in the UK or US")
