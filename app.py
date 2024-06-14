@@ -1,5 +1,6 @@
 import streamlit as st
 
+# welcome message
 st.title("Hi, Welcome to Hadiyah(). We are a voluntary organisation XXXX")
 
 with st.chat_message("user"):
@@ -8,7 +9,7 @@ with st.chat_message("user"):
     us = st.button("2. US")
     international = st.button("3. International")
 
-# set button counters
+# set initial button counters - do not touch this code
 if 'video_count' not in st.session_state:
     st.session_state.video_count = 0
 if 'podcast_count' not in st.session_state:
@@ -30,7 +31,8 @@ def blogs_counter():
 def org_counter():
     st.session_state.org_count += 1
 
-def first_set_options():
+# define the resource set of options
+def resource_options():
     with st.chat_message("user"):
         st.write("What type of resources are you looking for?")
 
@@ -43,16 +45,16 @@ def first_set_options():
             st.button("Blogs", on_click=blogs_counter)
             st.button("Organisation", on_click=org_counter)
 
-
+# what the user should see when they click on the first set of options
 if international:
     st.write("Unfortunately we do not provide this info")
 elif uk or us:
-    first_set_options()
+    resource_options()
 
-
+# if the user picks video
 if st.session_state.video_count==1:
     st.session_state.video_count = 0 # reset it to zero
-    first_set_options()
+    resource_options()
 
     with st.chat_message("user"):
         st.write("Video resources")
@@ -66,9 +68,10 @@ if st.session_state.video_count==1:
         st.write(f'<p style="font-size: 14px; color:grey">{text}</p>',
                  unsafe_allow_html=True)
 
+# if the user picks blogs
 if st.session_state.blogs_count==1:
     st.session_state.blogs_count = 0 # reset it to zero
-    first_set_options()
+    resource_options()
     with st.chat_message("user"):
         st.write("Blog resources")
 
@@ -81,9 +84,10 @@ if st.session_state.blogs_count==1:
         st.write(f'<p style="font-size: 14px; color:grey">{text}</p>',
                  unsafe_allow_html=True)
 
+# if the user picks podcasts
 if st.session_state.podcast_count ==1:
     st.session_state.podcast_count = 0 # reset it to zero
-    first_set_options()
+    resource_options()
     with st.chat_message("user"):
         st.write("Podcast resources")
 
@@ -96,9 +100,10 @@ if st.session_state.podcast_count ==1:
         st.write(f'<p style="font-size: 14px; color:grey">{text}</p>',
                  unsafe_allow_html=True)
 
+# if the user picks organisation
 if st.session_state.org_count ==1:
     st.session_state.org_count = 0 # reset it to zero
-    first_set_options()
+    resource_options()
     with st.chat_message("user"):
         st.write("Organisation resources")
 
@@ -110,10 +115,3 @@ if st.session_state.org_count ==1:
 
         st.write(f'<p style="font-size: 14px; color:grey">{text}</p>',
                  unsafe_allow_html=True)
-
-
-
-
-
-
-
