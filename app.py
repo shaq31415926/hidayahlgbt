@@ -1,7 +1,7 @@
 import streamlit as st
 
 # welcome message
-st.title("Hi, Welcome to [Hidayah](https://hidayahlgbt.com/resource-list/). We are a voluntary organisation XXXX."
+st.title("Hi, Zen. Welcome to [Hidayah](https://hidayahlgbt.com/resource-list/). We are a voluntary organisation XXXX."
          "You always go to the [chatgpt bot](https://chatgpt.com/g/g-nC9Kkvdgo-rainbow-rafiq) aswell"
          "")
 
